@@ -64,7 +64,21 @@ if(a>=18 and a<60):
 elif(a>+60):
     print("are dada ji aram karo jakar thodi si to zindagi bachi hai")    
 else:
-    print("jakar complaint piyo")    
+    print("jakar complaint piyo")  
+
+
+ #DAY 15
+a = int(input("enter the hour till 12 am in 24H format:"))
+if(a<=12):
+    print("GOOD MORNING BHAI JI!")
+elif(a>=12 and a <=16):
+    print("GOOD AFTERNOON BHAIYA JI!")    
+elif(a>=16 and a<20):
+    print("GOOD EVENING BHAI JI!")
+elif(a>=20  and a<=24):
+    print("GOOD NIGHT JI!")
+else:
+    print("andhera kayam rahe!")  
 
 
 
