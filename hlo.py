@@ -67,7 +67,7 @@ else:
     print("jakar complaint piyo")  
 
 
- #DAY 15
+#DAY 15
 a = int(input("enter the hour till 12 am in 24H format:"))
 if(a<=12):
     print("GOOD MORNING BHAI JI!")
@@ -78,8 +78,60 @@ elif(a>=16 and a<20):
 elif(a>=20  and a<=24):
     print("GOOD NIGHT JI!")
 else:
-    print("andhera kayam rahe!")  
+    print("andhera kayam rahe!")            
 
+import time
+timestamp = time.strftime('%H:%M:%S')
+print(timestamp)
+timestamp = time.strftime('%H')
+print(timestamp)
+timestamp = time.strftime('%M')
+print(timestamp)
+timestamp = time.strftime('%S')
+print(timestamp)
+
+
+# DAY 16
+# match case statement
+
+print("press 1 for morning:\npress 2 for afternoon:\npress 3 for evening:\npress 4 for night:")
+a= int (input("enter your choice:"))
+match a:
+    case 1:
+        print("GOOD MORNING")
+
+    case 2:
+        print("GOOD AFTERNOON")
+
+    case 3:
+        print("GOOD EVENING")
+
+    case 4:
+        print("GOOD NIGHT")
+
+    case _:
+        print("bye bye")               
+
+
+# DAY 17
+# FOR LOOP
+
+name = "hariom prashad rajkumar"
+for i in name:
+    print(i ,end=",")
+
+name = " vaibhav chauhan"
+for i in name:
+    print(i)
+
+for num in range(10):#range
+    print(num)
+
+for num in range(10,15):#range
+    print(num)  
+
+for num in range(10,20,2 ):#step
+    print(num)
 
 
 
