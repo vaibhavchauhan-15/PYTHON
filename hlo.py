@@ -132,7 +132,75 @@ for num in range(10,15):#range
 
 for num in range(10,20,2 ):#step
     print(num)
+# DAY 18
+n=int(input("Enter a number how many times you want to print :"))
+a=0
+while(a<=n):
+ print("hii")
+ a +=1
 
+       
+do {
+  print("hlo")
+}
+while()
+  
+
+count=5
+while(count>0):
+ print(count) 
+count -=1
+ 
+#DAY 19
+for i in range(1,11):
+    if(i==5):
+     continue
+    print("5 X",i,"=",5*i)
+    if(i==10):
+        break
+
+# DAY 20
+# function
+a=int(input("Enter first number:"))
+b=int(input("Enter second number:"))
+def isgreater(a,b):
+    if(a>b):
+        print("a bara hai")
+    else:
+        print("b bara hai ") 
+
+def isless(a,b):
+    if(a<b):
+        print("a is small")
+    else:
+        print("b is small or equal")
+
+def avg(a,b):
+    c=0
+    c=(a+b)/2
+    print("This is the avg value :",c)
+
+def Table(a):
+    for i in range(10):
+        print(a,' x ',i+1,'= ',a*(i+1)) #5 x 1 = 5 
+        i=i+1   
+                 
+
+isgreater(a,b)  
+isless(a,b)
+avg(a,b)
+Table(a)
+
+
+
+
+
+
+
+
+
+
+      
 
 
 
