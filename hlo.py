@@ -224,6 +224,52 @@ Table(a)
 # # if "ram" in name:
 # #     print("yes")
 
+# #palindrome or not
+
+# # value = input("Enter a value: ")
+# # n = value[::-1]
+# # if(value == n):
+# #     print("it is palindrome")
+# # else:
+# #     print("no palindrome")   
+
+# # DAY 23 list
+# l = [ 1,5,8,6,9,5,8,5,3,8]
+# print(l)
+# l.append(7)
+# print(l,"after append")
+# l.sort()
+# print(l,"after sort")
+# l.sort(reverse=True)
+# print(l,"after reverse sort")
+# print(l.index(1)) #print the index of 1
+# print(l.count(5)) #counting the value
+# # m=l
+# # m[8]=0
+# # print(l)
+# l.insert(3,777)
+# print(l,"after insert 777")
+# m=[44,665,9656]
+# l.extend(m)
+# print(l,"after extend")
+
+# # day 24 tuple 
+# tup = (45,87,69,57,46,32,78)
+# print(type(tup),tup)
+# print(len(tup),"length of tuple")
+# # tup[3]=4  tuple is immutable
+# print(tup[1])
+# print(tup[-1])
+# print(tup[5])
+# # print(tup[8]) out of range 
+# print(tup[:6])
+# tup2 = tup[ :3]
+# print(tup2)
+
+# day 25
+tup = (45,87,69,57,46,32,78)
+
+
 
 
 
