@@ -191,6 +191,24 @@ isless(a,b)
 avg(a,b)
 Table(a)
 
+# # # #DAY 21
+# # def avg(a=2,b=3):#default argument
+# #     sum=0
+# #     sum=(a+b)/2
+# #     print("average is :",sum)
+# # avg()
+# # avg(5)
+# # avg(5,6)
+
+
+# # def NAMEPRINT(fname="aman",mname="kamal",lname="kumar"):# default argument
+# #     print("hello!",fname,mname,lname)
+
+# # NAMEPRINT()
+# # NAMEPRINT("KOMAL")
+# # NAMEPRINT("KOMAL","ramji")
+# # NAMEPRINT("sanjana","akhilesh ","chauhan")
+
 
 
 
