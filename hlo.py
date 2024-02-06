@@ -209,6 +209,22 @@ Table(a)
 # # NAMEPRINT("KOMAL","ramji")
 # # NAMEPRINT("sanjana","akhilesh ","chauhan")
 
+# #day22 LIST
+# # a=[1,2,4,5,5,2,5,7,3,7,9,7,5,4,3,3,4]
+# # name=["ram","mohan","kali","windows"]
+# # print(a)
+# # print(a[-1])
+# # print(a[1:5])
+# # print(a[1:8:2])
+# # print(a[1:-1:2])
+# # print(name)
+# # print(name[1])
+# # print(name[1:5])
+# # print(name[1:8:2])
+# # if "ram" in name:
+# #     print("yes")
+
+
 
 
 
