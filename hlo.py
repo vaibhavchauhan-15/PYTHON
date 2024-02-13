@@ -191,83 +191,133 @@ isless(a,b)
 avg(a,b)
 Table(a)
 
-# # # #DAY 21
-# # def avg(a=2,b=3):#default argument
-# #     sum=0
-# #     sum=(a+b)/2
-# #     print("average is :",sum)
-# # avg()
-# # avg(5)
-# # avg(5,6)
+# #DAY 21
+def avg(a=2,b=3):#default argument
+    sum=0
+    sum=(a+b)/2
+    print("average is :",sum)
+avg()
+avg(5)
+avg(5,6)
 
 
-# # def NAMEPRINT(fname="aman",mname="kamal",lname="kumar"):# default argument
-# #     print("hello!",fname,mname,lname)
+def NAMEPRINT(fname="aman",mname="kamal",lname="kumar"):# default argument
+    print("hello!",fname,mname,lname)
 
-# # NAMEPRINT()
-# # NAMEPRINT("KOMAL")
-# # NAMEPRINT("KOMAL","ramji")
-# # NAMEPRINT("sanjana","akhilesh ","chauhan")
+NAMEPRINT()
+NAMEPRINT("KOMAL")
+NAMEPRINT("KOMAL","ramji")
+NAMEPRINT("sanjana","akhilesh ","chauhan")
 
-# #day22 LIST
-# # a=[1,2,4,5,5,2,5,7,3,7,9,7,5,4,3,3,4]
-# # name=["ram","mohan","kali","windows"]
-# # print(a)
-# # print(a[-1])
-# # print(a[1:5])
-# # print(a[1:8:2])
-# # print(a[1:-1:2])
-# # print(name)
-# # print(name[1])
-# # print(name[1:5])
-# # print(name[1:8:2])
-# # if "ram" in name:
-# #     print("yes")
+#day22 LIST
+a=[1,2,4,5,5,2,5,7,3,7,9,7,5,4,3,3,4]
+name=["ram","mohan","kali","windows"]
+print(a)
+print(a[-1])
+print(a[1:5])
+print(a[1:8:2])
+print(a[1:-1:2])
+print(name)
+print(name[1])
+print(name[1:5])
+print(name[1:8:2])
+if "ram" in name:
+    print("yes")
 
-# #palindrome or not
+#palindrome or not
 
-# # value = input("Enter a value: ")
-# # n = value[::-1]
-# # if(value == n):
-# #     print("it is palindrome")
-# # else:
-# #     print("no palindrome")   
+value = input("Enter a value: ")
+n = value[::-1]
+if(value == n):
+    print("it is palindrome")
+else:
+    print("no palindrome")   
 
-# # DAY 23 list
-# l = [ 1,5,8,6,9,5,8,5,3,8]
+# DAY 23 list
+l = [ 1,5,8,6,9,5,8,5,3,8]
+print(l)
+l.append(7)
+print(l,"after append")
+l.sort()
+print(l,"after sort")
+l.sort(reverse=True)
+print(l,"after reverse sort")
+print(l.index(1)) #print the index of 1
+print(l.count(5)) #counting the value
+# m=l
+# m[8]=0
 # print(l)
-# l.append(7)
-# print(l,"after append")
-# l.sort()
-# print(l,"after sort")
-# l.sort(reverse=True)
-# print(l,"after reverse sort")
-# print(l.index(1)) #print the index of 1
-# print(l.count(5)) #counting the value
-# # m=l
-# # m[8]=0
-# # print(l)
-# l.insert(3,777)
-# print(l,"after insert 777")
-# m=[44,665,9656]
-# l.extend(m)
-# print(l,"after extend")
+l.insert(3,777)
+print(l,"after insert 777")
+m=[44,665,9656]
+l.extend(m)
+print(l,"after extend")
 
-# # day 24 tuple 
-# tup = (45,87,69,57,46,32,78)
-# print(type(tup),tup)
-# print(len(tup),"length of tuple")
-# # tup[3]=4  tuple is immutable
-# print(tup[1])
-# print(tup[-1])
-# print(tup[5])
-# # print(tup[8]) out of range 
-# print(tup[:6])
-# tup2 = tup[ :3]
-# print(tup2)
+# day 24 tuple 
+tup = (45,87,69,57,46,32,78)
+print(type(tup),tup)
+print(len(tup),"length of tuple")
+# tup[3]=4  tuple is immutable
+print(tup[1])
+print(tup[-1])
+print(tup[5])
+# print(tup[8]) out of range 
+print(tup[:6])
+tup2 = tup[ :3]
+print(tup2)
 
 # day 25
-tup = (45,87,69,57,46,32,78)
+tup = [45,87,32,69,57,46,32,78]
+country = ("india","japan","uk","finland","saudi")
+name = ("ram","sita","lakshman","hanuman")
+temp = list(country)
+temp.append("kuwait")
+temp.pop(2)
+temp[3]="baigan"
+temp.extend(tup)
+country = tuple(temp)
+print(country,"\n\n")
+final = country + name
+print(final,"\n\n")
+temp2 = tup.count(45)
+print(temp2)
+temp3 = tup.index(32,3,8)
+print(temp3)
+temp3 =len(tup)
+print(temp3)
+
+
+# day 26 
+import time
+t = time.strftime('%H:%M:%S')
+print(t)
+hour = int(time.strftime('%H'))
+hour = int(input("Enter hour :"))
+print(hour)
+if(hour >= 0 and hour < 12):
+    print("GOOD MORNING SIR!")
+elif(hour >= 12 and hour <16):
+    print("GOOD AFTERNOON SIR!")
+elif(hour >=16 and hour <=19):
+    print("GOOD EVENING SIR!")
+elif(hour > 19 and hour <=24):
+    print("GOOD NIGHT SIR!")    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
 
 
 
