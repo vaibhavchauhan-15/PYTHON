@@ -302,7 +302,20 @@ elif(hour >=16 and hour <=19):
     print("GOOD EVENING SIR!")
 elif(hour > 19 and hour <=24):
     print("GOOD NIGHT SIR!")    
-    
+
+#day 27 do some exercise
+
+#day 28 f"string
+letter = "My name is {2} and \nI am from {1}\nI am {0} old"
+name = "Vaibhav chauhan"
+place = "Bihar"
+age=19
+print(letter.format(age,place , name))
+print(f"\n\nUSING F STRING LIKE THIS: \n\nMy name is {{name}} and \nI am from {{place}}\nI am {{age}} old")
+print(f"\n\nUSING F STRING \n\nMy name is {name} and \nI am from {place}\nI am {age} old")
+
+price=84.034254
+print(f"The price of doller is :{price :.2f}")
 
 
 
