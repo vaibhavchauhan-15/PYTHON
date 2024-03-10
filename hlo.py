@@ -317,6 +317,37 @@ print(f"\n\nUSING F STRING \n\nMy name is {name} and \nI am from {place}\nI am {
 price=84.034254
 print(f"The price of doller is :{price :.2f}")
 
+# DAY 29 Docstring
+def sum(a,b):
+    '''Add two integer and return the sum value'''
+    s=a+b
+    return s
+
+a=5
+b=4
+print(sum(a,b))
+print(sum.__doc__)
+
+# DAY 30 RECURSION 
+
+def factorial(n):
+    if(n==0 or n==1):
+        return 1
+    else:
+        return n * factorial(n-1)
+    
+print(factorial(4))    
+
+
+
+def fabonacci(n):
+ if(n==0 or n==1):
+    return 1
+ else:
+   return  fabonacci(n -1) + fabonacci(n -2)
+
+print(fabonacci(5))
+
 
 
 
