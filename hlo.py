@@ -349,6 +349,22 @@ def fabonacci(n):
 print(fabonacci(5))
 
 
+# DAY 31 SETS
+
+name  = {"ram","shyam","jon","ram","jack","shyam"}
+print(name)
+
+for i in (name):
+   print (i)
+
+   
+tpye1={}
+type2=set()
+print(type(name))
+print(type (tpye1))
+print(type (type2) ) 
+
+
 
 
 
