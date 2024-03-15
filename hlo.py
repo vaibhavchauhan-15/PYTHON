@@ -364,6 +364,40 @@ print(type(name))
 print(type (tpye1))
 print(type (type2) ) 
 
+# day 32 sets method
+     
+cities = {"vadodara","thane","surat","kutch"}
+state = {"gujrat","bihar","maharashtra","assam","kerala"}
+state2={"jammu","kashmir","ladak","bihar","assam","gujrat"}
+state3={"jammu","kashmir"}
+# print(type(state))
+print(state.difference(state2))
+print(state2.difference(state))
+print(state.union(state2))
+# state2.update(state)
+print("after update\n",state2)
+print("after intersection:\n",state.intersection(state2))
+print("after symmetric_difference:\n",state.symmetric_difference(state2))
+# print("after symmetric_difference:\n",state.symmetric_difference_update(state2))
+# print(state)
+print("disjoin:",state.isdisjoint(cities))
+print("disjoin:",state.isdisjoint(state))
+print("superset:",state2.issuperset(state3))
+print("subset:",state3.issubset(state2))
+state3.add("har har mahadev")
+print("after add:",state3)
+state3.remove("har har mahadev")
+print("after remove:",state3)
+# state3.remove("har har mahadev")#it show error if does'n exist
+# state3.discard("har har mahadev")#it doesn't show error if does'n exist
+print(state3)
+item = state3.pop()
+print("after pop:",state3)
+print(item)
+state3.clear()
+print(state3)
+# del state3
+# print(state3)#now state3 doesn't exist
 
 
 
