@@ -401,6 +401,26 @@ print(state3)
 
 
 
+#day 33 dictonary
+
+dic = {
+    'name':'vaibhav',
+    'age': 19,
+    'weight':500
+}
+
+info = {1:'student1'' grade A',2:'student2'' grade A',3:'student3'' grade B'}
+print(dic)
+print(info)
+print(info[2])
+print(info.keys())
+print(info.values())
+for i in info.values():
+    print(i)
+# print(info.items())
+
+
+
 
 
 
