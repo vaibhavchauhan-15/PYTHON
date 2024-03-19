@@ -421,32 +421,28 @@ for i in info.values():
 
 
 
+# day 34 dictonary method 
 
+std1 = {600:68, 297: 90, 65: 85, 75: 00}
+print(std1)
+std2 = {635:64, 227:50 ,785:55,855:707,58:55,655:20}
+print(std2)
+print(std1[65])
 
+std2.popitem()
+print("after pop item:",std2)
+std1.pop(65)
+print("after pop:",std1)
 
-
-
-
-
-
-
-
-     
-
-
-
-
-
-
-
-
-
-
-
-
-      
-
-
-
-
-      
+std2.update(std1)
+print("after update:",std2)
+std2.clear()
+print("after clear:",std2)
+del std1[600]
+print("after delete item:",std1)
+#printing index value
+print(std1.get(0))
+print(std1.get(3))
+print(75)
+# del std1
+# print("after delete:" ,std1) #raised error
