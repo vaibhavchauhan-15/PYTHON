@@ -417,7 +417,7 @@ print(info.keys())
 print(info.values())
 for i in info.values():
     print(i)
-# print(info.items())
+
 
 
 
