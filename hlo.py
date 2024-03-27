@@ -421,7 +421,6 @@ for i in info.values():
 
 
 # day 34 dictonary method 
-
 std1 = {600:68, 297: 90, 65: 85, 75: 00}
 print(std1)
 std2 = {635:64, 227:50 ,785:55,855:707,58:55,655:20}
