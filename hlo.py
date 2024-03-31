@@ -13,7 +13,6 @@ andry = '''vaibhav'''
 for character in andry:
  print(character)
 
-
 #day 12
 names = "ankit ka bacchi"
 print(names[0:9])
