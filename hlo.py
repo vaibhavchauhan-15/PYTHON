@@ -20,7 +20,7 @@ names = "ankit ka bacchi"
 print(names[0:9])
 print(len(names))
 print(names[0:15:2])
-print(names[:])  
+print(names[:])   
 print(names[2:10]) 
 print(names[3:-1]) 
 print(names[-5:-2]) 
