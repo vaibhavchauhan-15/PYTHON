@@ -47,7 +47,7 @@ print(str.endswith("a",1,5))
 print(str.find("ai"))
 print(str.index("ai"))
 str = " hlo ji kya hal chal"
-str2= "     "
+str2= "     " 
 print(str.isalnum())
 print(str.isalpha())
 print(str.islower())
