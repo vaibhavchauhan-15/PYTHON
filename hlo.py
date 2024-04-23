@@ -39,7 +39,7 @@ str1="vaibhav chauhan"
 print(str1.capitalize())
 print(str1.title())
 print(len(str1))
-print(len(str1.center(50)))
+print(len(str1.center(50))) 
 print(str1.count("vaibhav"))
 print(str.startswith("V"))
 print(str.endswith("v"))
