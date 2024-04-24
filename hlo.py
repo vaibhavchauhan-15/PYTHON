@@ -10,7 +10,7 @@ print("reminder :" ,x % y)
  
          
 day 11  
-andry = '''vaibhav'''
+andry = '''vaibhav''' 
 for character in andry:
  print(character)
     
