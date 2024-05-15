@@ -17,7 +17,7 @@ for character in andry:
       
 #day 12   
 names = "ankit ka bacchi" 
-print(names[0:9])
+print(names[0:9]) 
 print(len(names))
 print(names[0:15:2])
 print(names[:])   
