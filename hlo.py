@@ -6,7 +6,7 @@ print("addition :" ,x + y)
 
 print("subtraction :",x - y)
 print("divide :" ,x / y) 
-print("multiplication :",x * y)
+print("multiplication :",x * y) 
 print("reminder :" ,x % y)  
         
                       
