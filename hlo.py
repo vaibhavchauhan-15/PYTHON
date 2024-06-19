@@ -447,3 +447,30 @@ print(std1.get(3))
 print(75)
 # del std1
 # print("after delete:" ,std1) #raised error
+
+#day 35 for loop with else statement
+
+for i in range(5):
+    print(i)
+    if i == 4:
+        break 
+    
+else:
+    print("else block") 
+    
+
+i=0     
+while(i<5):
+    print(i)
+    i=i+1
+else:
+    print("else block")
+
+i=0   #with break  
+while(i<5):
+    print(i)
+    i=i+1
+    if i==3:
+     break
+else:
+    print("else block")
