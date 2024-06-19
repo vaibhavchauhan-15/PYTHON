@@ -475,3 +475,320 @@ while(i<5):
      break
 else:
     print("else block")
+
+
+
+#day 36 exception handling
+
+n=input("enter the number :")
+print(f"multiplication of {n} is:")
+
+for i in range(1,11):
+    print(f" {n} x {i} = {int(n)*i}")
+    
+#using exception handling
+n=input("enter the number :")
+
+try:
+   print(f"multiplication of {n} is:")  
+   for i in range(1,11):
+     print(f" {n} x {i} = {int(n)*i}")
+     
+     
+except Exception as e:
+  print(e)
+
+#day 37 finally keyword
+
+
+try:
+    l=[1,2,5,3,2,6]
+    i=int(input("enter the index number:"))
+    print(l[i])
+except IndexError as e:
+    print(e)  
+    
+finally:
+    print("finally block")     
+
+def fun1():
+    try:
+     l=[1,2,5,3,2,6]
+     i=int(input("enter the index number:"))
+     print(l[i])
+    except IndexError as e:
+     print(e)  
+    
+    finally:
+        print("finally block") 
+    
+    
+#days 38 custom errors
+
+# n=int(input("enter num between 5 and 9:"))
+
+# if(n<5 or n>9) :
+#     raise ValueError("invalid input")   
+
+
+try:
+    n=int(input("enter num between 5 and 9:"))
+
+    if(n<5 or n>9) :
+        raise ValueError("invalid input") 
+    
+except Exception as e:
+    print(e)
+        
+        
+        
+#days 39 create kbc
+
+questions = [
+    {
+        "question": "Who is the first Prime Minister of India?",
+        "options": ["A) Jawaharlal Nehru", "B) Mahatma Gandhi", "C) Indira Gandhi", "D) Sardar Patel"],
+        "answer": "A"
+    },
+    {
+        "question": "What is the capital of France?",
+        "options": ["A) Berlin", "B) Madrid", "C) Paris", "D) Rome"],
+        "answer": "C"
+    },
+    {
+        "question": "Which planet is known as the Red Planet?",
+        "options": ["A) Earth", "B) Mars", "C) Jupiter", "D) Saturn"],
+        "answer": "B"
+    },
+    {
+        "question": "Who wrote 'Hamlet'?",
+        "options": ["A) Charles Dickens", "B) William Shakespeare", "C) Mark Twain", "D) Jane Austen"],
+        "answer": "B"
+    },
+    {
+        "question": "What is the boiling point of water?",
+        "options": ["A) 90°C", "B) 100°C", "C) 120°C", "D) 80°C"],
+        "answer": "B"
+    }
+]
+
+def play_kbc():
+    print("Welcome to Kaun Banega Crorepati!")
+    prize_money = 0
+    prize_levels = [1000, 5000, 10000, 50000, 100000]
+
+    for idx, q in enumerate(questions):
+        print(f"\nQuestion for ₹{prize_levels[idx]}:")
+        print(q["question"])
+        for option in q["options"]:
+            print(option)
+        
+        answer = input("Your answer (A/B/C/D): ").strip().upper()
+
+        if answer == q["answer"]:
+            print("Correct answer!")
+            prize_money = prize_levels[idx]
+        else:
+            print(f"Wrong answer! The correct answer was {q['answer']}.")
+            break
+
+    print(f"\nYou have won ₹{prize_money}. Thank you for playing!")
+
+play_kbc()
+
+
+
+
+# #is prime or not
+# def is_prime(n):
+#     if n <= 1:
+#         return "not prime"
+#     if n <= 3:
+#         return "prime"
+#     if n % 2 == 0 or n % 3 == 0:
+#         return "not prime"
+    
+#     k = 1
+#     while True:
+#         check1 = 6 * k - 1
+#         check2 = 6 * k + 1
+        
+#         if check1 * check2 > n:
+#             return "prime"
+        
+#         if n % check1 == 0 or n % check2 == 0:
+#             return "not prime"
+        
+#         k = k + 1
+
+# # Taking input from the user
+# n = int(input("Enter a number which you want to check prime or not: "))
+# result = is_prime(n)
+# print(result)
+
+
+#binary search
+
+# arr = [1, 3, 6, 7, 9, 11, 12, 15, 16, 18, 21]
+# left = 0
+# right = len(arr) - 1
+
+# # Display the array elements
+# for i in range(len(arr)):
+#     print(arr[i])
+
+# target = int(input("Enter any number from the above list: "))
+
+# # Binary search implementation
+# while left <= right:
+#     mid = left + (right - left) // 2
+    
+#     if target == arr[mid]:
+#         print(f"Element {target} is found at index {mid}.")
+#         break
+#     elif target < arr[mid]:
+#         right = mid - 1
+#     else:
+#         left = mid + 1
+# else:
+#     print(f"Element {target} is not found in the list.")
+# arr = [1, 3, 6, 7, 9, 11, 12, 15, 16, 18, 21]
+# left = 0
+# right = len(arr) - 1
+
+# # Display number
+# print("Array elements:", arr)
+
+# target = int(input("Enter any number from the above list or a new number to insert: "))
+
+# # Binary search 
+# found = False
+# while left <= right:
+#     mid = left + (right - left) // 2
+    
+#     if target == arr[mid]:
+#         print(f"Element {target} is found at index {mid}.")
+#         found = True
+#         break
+#     elif target < arr[mid]:
+#         right = mid - 1
+#     else:
+#         left = mid + 1
+
+# # If the element is not found, insert it in the correct position
+# if not found:
+#     print(f"left at {left} position")
+#     arr.insert(left, target)
+#     print(f"Element {target} is not found in the list. It has been inserted at index {left}.")
+#     print("New array elements:", arr)
+
+
+#day40 encryption and decryption
+
+import random
+import string
+
+def encode_word(word):
+    if len(word) >= 3:
+        first_letter = word[0]
+        modified_word = word[1:] + first_letter
+        random_prefix = ''.join(random.choices(string.ascii_letters, k=3))
+        random_suffix = ''.join(random.choices(string.ascii_letters, k=3))
+        encoded_word = random_prefix + modified_word + random_suffix
+    else:
+        encoded_word = word[::-1]
+    return encoded_word
+
+def decode_word(word):
+    if len(word) < 3:
+        decoded_word = word[::-1]
+    else:
+        stripped_word = word[3:-3]
+        last_letter = stripped_word[-1]
+        decoded_word = last_letter + stripped_word[:-1]
+    return decoded_word
+
+def encode_message(message):
+    words = message.split()
+    encoded_words = [encode_word(word) for word in words]
+    return ' '.join(encoded_words)
+
+def decode_message(message):
+    words = message.split()
+    decoded_words = [decode_word(word) for word in words]
+    return ' '.join(decoded_words)
+
+# Example usage
+original_message =input("Enter the message:") 
+encoded_message = encode_message(original_message)
+decoded_message = decode_message(encoded_message)
+
+print("Original Message: ", original_message)
+print("Encoded Message: ", encoded_message)
+print("Decoded Message: ", decoded_message)
+
+# #day 41 sort hand if else statement
+a=5
+b=3
+print("A") if a>b else print("=") if a<b else print("B") 
+
+
+c=9 if a>b else 10
+print(c)
+
+
+days 42 enumerate function
+marks=[12,34,64,24,26,75,96,32,65,98,57]
+index=0
+for mark in marks: #want index and element both at a time
+    print(mark)
+    if index==6:
+        print("awesome")
+    index+=1  
+
+  
+#now using enumerate function
+marks=[12,34,64,24,26,75,96,32,65,98,57]
+for index,mark in enumerate(marks):
+    print(mark)
+    if index==6:
+        print("awesome")
+
+
+# #days 43 virtual environment
+
+#days 44 import in python
+# import math
+# from math import pi,sqrt
+import math as m
+import pandas
+# import math * # * means all but this is not recommanded
+print(m.sqrt(5)*m.pi)
+from DAA import daa  #this file and method create in the local file
+daa()
+
+
+#days 45 if __name__ = "__main__"
+import vaibhav #this file create by me
+vaibhav.welcome()
+
+#days 46 os module in python
+
+
+import os
+print(os.getcwd())
+if (not os.path.exists("oslist")):
+  os.mkdir("oslist")
+  
+# for i in range(1,10): #file created
+#     os.mkdir(f"oslist/list{i}")  
+
+os.rename(f"oslist/day1",f"oslist/list1")
+
+# for i in range(1,10):
+#   os.rename(f"oslist/list{i}", f"oslist/day{1}")
+
+
+
+
+
