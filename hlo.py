@@ -789,6 +789,964 @@ os.rename(f"oslist/day1",f"oslist/list1")
 #   os.rename(f"oslist/list{i}", f"oslist/day{1}")
 
 
+#days 47 exercise 4 encryption and decription
+
+coding = int(input("1 for encode and 0 for decode:"))
+st = input("Enter your message:")
+words = st.split(" ")
+
+coding=True if (coding==1) else False
+newwords = []
+if(coding):
+  for word in words:
+    if len(word) >= 3:
+        r1 = "jhs"
+        r2 = "dkf"
+        newst = r1 + word[1:] + word[0] + r2
+        newwords.append(newst)
+    else:
+        newwords.append(word[::-1])
+else:
+  for word in words:
+    if (len(word)>=3):
+      st=word[3:-3]
+      st=word[-1]+word[:-1]
+      newwords.append(st)
+    else:
+      newwords.append(word[::-1])
+print(" ".join(newwords))
+
+
+#days 48 local and global variable
+
+x=4
+y=9 #global variable
+
+print(f"global variable x={x}")
+def fun():
+  z=5 #local variable
+  global x
+  x=10
+  print(f"local variable z={z}")
+
+fun()
+print(f"global variable y={y}")
+print(f"global variable x={x}")
+# print(z)#give error because this is loacal
+          # variable it cannon use in outside the function
+
+# days 49 file io in python
+
+# f=open('hello.txt','r')
+# # f.write('hii i am vaibhav')
+# # f.close()
+# seen=f.read()
+# print(seen)
+# f.close()
+
+try:
+    f=open('hello.txt', 'r')
+    seen = f.read()
+    print(seen)
+except FileNotFoundError:
+    print("The file 'hello.txt' does not exist.")
+except Exception as e:
+    print(f"An error occurred: {e}")
+
+
+#days 50 read(),readlines(),and other method
+
+f=open('hello.txt','r')
+
+while True:
+    line = f.readline()#use for read a single line
+    if not line:
+        break
+    print(line)
+    print("\n")
+lines = f.readlines()#use for read a multiples line
+lines = f.writelines()#use for write  multiples line
+print(lines)
+
+
+#days 51 seek(),tell() and tuncate
+
+
+f=open('myfile.txt','w')
+f.write('hlo ji kya haal')
+f.write('djfgkjagsal')
+f.write('hljsdgkbghaal')
+f.write('hsjhdfal')
+f.write('hsjdhfvvgl')
+f.write('hlo hal')
+f.close()
+
+with open('myfile.txt','r') as f:
+    f.seek(6)#jump to the 7th letter
+    print(f.read())
+
+f=open('myfile.txt','w')
+f.write('ksdglhjabs')
+f.truncate(5)#after 5 letter all are deleted
+f.close()
+
+with open('myfile.txt','r') as f:
+  print(f.readlines())
+
+#days 52 lambda function(anonymous function)
+
+
+def sum(fx,b):
+    return fx + b
+# a=6
+# b=9
+# c=sum(a,b)
+# print(c)
+
+
+a=3
+b=8
+rum=lambda a,b: a+b
+result = rum(a,b)
+print(sum(result,b))
+
+#days 53 map , filter , reduce in python
+
+def cube(x):
+    return x*x*x
+print(cube(2))
+
+
+l = [3,5,6,2,8,9]
+new=[]
+for i in l:
+    new.append(cube(i))
+print(new)
+
+
+#now using map
+newlist=[]
+newlist=list(map(cube,l))
+print(newlist)
+
+
+#now using filter
+
+def filter_fun(a):
+    return a>2
+l = [3,5,6,2,8,9]
+nl=list(filter(filter_fun ,l))
+print(nl)
+
+from functools import reduce
+print("using reduce function")
+l = [3,5,6,2,8,9]
+
+newl=reduce(lambda a,b:a+b,l)
+print(newl)
+
+
+#days 54 "is" and "=="
+
+a=5
+b="5"
+print("\nfirst block")
+print(a is b) #it compare the address of the object/varible/value
+print(a == b)#it compare the value
+
+
+print("second block")
+print(a is 5)
+print(b is 5)
+
+print("\nthird block")
+print(b is "5")
+print(a is "5")
+
+
+print("\nforth block")
+print(a==5)
+print(b==5)
+
+#days 55 snake water and gun game
+import random
+print("*********WELCOME TO THE SNAKE  WATER  GUN GAME***************\n")
+comp= random.randint(0,2)
+user=int(input("Enter your choice SNAKE(O),WATER(1),GUN(2):"))
+if (comp==0):
+    print("Coumputer choice: Snake")
+if (comp==1):
+    print("Coumputer choice: Water")
+if(comp==2):
+    print("Coumputer choice: Gun")
+
+if (user==0):
+    print("Your choice: Snake")
+if (user==1):
+    print("Your choice: Water")
+if(user==2):
+    print("Your choice: Gun")
+
+
+if(user<=2 and user>=0 ):
+    if comp == 0 and user == 0:
+        print("Result: Draw!!!")
+    if comp == 1 and user == 0:
+        print("Result: Yayy!!! ^_^ you Won")
+    if comp == 2 and user == 0:
+        print("Result: Lose :(:(  Better Luck Next Time!!!")
+    if comp == 0 and user == 1:
+        print("Result: Lose :(:(  Better Luck Next Time!!!")
+    if comp == 1 and user == 1:
+        print("Result: Draw!!!")
+    if comp == 2 and user == 1:
+        print("Result: Yayy!! ^_^ you Won")
+    if comp == 0 and user == 2:
+        print("Result: Yayy!!! ^_^ you Won")
+    if comp == 1 and user == 2:
+        print("Result: Lose :(:(  Better Luck Next Time!!!")
+    if comp == 2 and user == 2:
+        print("Result: Draw!!!")
+else:
+    print("Enter valid choice!!!")
+
+
+#days 56 OOps concept
+
+#days 57 class and object
+
+class student:
+    name= "rohan"
+    rollno=23
+    department="cse"
+    def info(self):
+        print(f"student name is {self.name} and roll no is {self.rollno} from {self.department}")
+
+obj=student()
+
+print(obj.name)
+obj.name="kalya"
+print(obj.name)
+obj.name="soham"
+obj.info()
+
+
+#days 58 constructor
+
+class emp:
+    def __init__(self,name,branch):
+        print("i am cunstructor")
+        self.name=name
+        self.branch=branch
+
+    def info(self):
+        print(f"{self.name} working in {self.branch} department")
+
+obj=emp("karan","cyber")
+obj1=emp("arjun","design")
+
+obj.name="arya"
+obj.branch="cse"
+obj.info()
+obj1.info()
+
+
+#days 59 python decorators
+
+def greet(fx):
+    def mfx():
+        print("good morning ")
+        fx()
+        print("thank you for using me")
+    return mfx
+
+@greet
+def hello():
+    print("hello how are you")
+
+def wish(fx):
+    def mfx(*args,**kwargs):#list and tuple
+        print("good morning ")
+        fx(*args,**kwargs)
+        print("thank you for using me")
+    return mfx
+
+
+# @wish
+def add(a,b):
+    c=a+b
+    print(c)
+
+hello()
+# greet(hello)()
+# add(1,3)
+wish(add)(1,3)
+
+
+#days 60 getter and setter
+
+class myclass:
+    def __init__(self,value):
+        self.newvalue=value
+
+    def Printing(self):
+        print(f"original value is :{self.newvalue}")
+
+
+    @property
+    def ten_value(self):
+        return print(f"multiple of ten :{10*self.newvalue}")
+
+    @ten_value.setter
+    def ten_value(self,new_value):
+        self.newvalue=new_value /10
+
+obj=myclass(10)
+obj.Printing()
+print(obj.ten_value)
+obj.newvalue=9
+print(obj.ten_value)
+obj.Printing()
+
+
+#days 61 inheritance
+class manager:
+    def __init__(self,Name,id,dep):
+        self.name=Name
+        self.id=id
+        self.department=dep
+
+    def show(self):
+        print(f"My name is {self.name}\nmy id no is {self.id} \nand i am from {self.department} branch")
+
+class employee(manager):
+    def show1(self):
+        print(f"i am working under {self.name}")
+
+m1=manager("arun",36,"design")
+m2=manager("om",3,"cse")
+m3=manager("amol",64,"gaming")
+m4=manager("karan",6,"security")
+
+e=employee("amol",34,"developer")
+e.show1()
+# m1.show()
+# m2.show()
+# m3.show()          *-
+# m4.show()
+
+#days 62 access modifier
+
+class student:
+    def __init__(self):
+        self.__newname="vaibhav"
+    def detail(self):
+        print("hii i am vaibhav")
+obj=student()
+print(obj._student__newname)
+obj.detail()
+
+#days 63 solution for snake water gun game
+
+#days 64 library management system exercise 6
+
+class Library:
+    no_of_books = 0
+    books = [
+    "To Kill a Mockingbird by Harper Lee",
+    "1984 by George Orwell",
+    "Harry Potter and the Sorcerer's Stone by J.K. Rowling",
+    "The Lord of the Rings by J.R.R. Tolkien",
+    "The Great Gatsby by F. Scott Fitzgerald",
+    "Pride and Prejudice by Jane Austen",
+    "The Catcher in the Rye by J.D. Salinger",
+    "The Chronicles of Narnia by C.S. Lewis",
+    "Animal Farm by George Orwell",
+    "The Hobbit by J.R.R. Tolkien",
+    "Fahrenheit 451 by Ray Bradbury",
+    "Jane Eyre by Charlotte Brontë",
+    "Wuthering Heights by Emily Brontë",
+    "The Book Thief by Markus Zusak",
+    "The Kite Runner by Khaled Hosseini",
+    "Brave New World by Aldous Huxley",
+    "The Hunger Games by Suzanne Collins",
+    "The Fault in Our Stars by John Green",
+    "Gone with the Wind by Margaret Mitchell",
+    "Moby Dick by Herman Melville"
+    ]
+
+
+    def count(self):
+        count=0
+        for i in self.books:
+            count+=1
+        return count
+    def Ismatch(self):
+        if number_of_books==len(self.books):
+            print("Matched")
+        else:
+            print("Not match")
+
+# Create an instance of the Library class
+library_instance = Library()
+
+# Count and print the number of books
+number_of_books = library_instance.count()
+
+# Take books input
+# library_instance.take()
+
+print(f"Total number of books: {number_of_books}")
+library_instance.Ismatch()
+
+##days 65 static method
+class math:
+    def __init__(self,num):
+        self.num=num
+
+    def addtonum(self,n):
+        self.num=self.num+n
+
+    @staticmethod
+    def add(a,b):
+        return a+b
+
+
+a=math(5)
+a.addtonum(2)
+print(a.num)
+print(a.add(2,5))
+
+
+##day 66 instance vs class variable
+class employee:
+    company ="tata"
+    def __init__(self,name):
+        self.name=name
+        self.raised_amount=15
+
+    def show(self):
+        print(f"the name of the employee is {self.name} and he raised amount is {self.raised_amount} working in {self.company}")
+
+emp1 =employee("vaibhav")
+emp1.show()
+employee.show(emp1)
+emp2=employee("varun")
+emp3=employee("arjun")
+emp3.company="volvo"
+emp2.show()
+emp3.show()
+
+#day 67 solve exercise 6
+
+#day 68 exercise 7(clear and clutter)
+
+import os
+i=0
+files=os.listdir("cluttered")
+for file in files:
+    if file.endswith(".png"):
+        print(file)
+        os.rename(f"cluttered/{file}",f"cluttered/{i}.png")
+        i=i+1
+
+
+#day 69 pthon method
+
+class employee:
+    company = "apple"
+    def show(self):
+        print(f"my name is {self.name} and i am working in {self.company}")
+
+
+    def newcompany(self,newname):
+        self.company=newname
+
+emp1=employee()
+emp1.name="aman"
+emp1.show()
+emp1.newcompany("tata")
+
+emp1.show()
+
+#days 70 class method as aternative constructor
+
+class hello:
+    def __init__(self,name,sallary) :
+       self.name=name
+       self.sallary=sallary
+
+    @classmethod
+    def fromstr(self,string):
+        return self(string.split("-")[0],string.split("-")[1])
+
+
+ep1=hello("om",15000)
+print(ep1.name)
+print(ep1.sallary)
+
+str="no-12000"
+ep2=hello(str.split("-")[0],str.split("-")[1])
+print(ep2.name)
+print(ep2.sallary)
+
+
+string ="komal-20000"
+ep3=hello.fromstr(string)
+print(ep3.name)
+print(ep3.sallary)
+
+
+#days 71 dir,dict,help
+
+x=[6,7,3,4,6,674,3,2,3]
+
+print(dir(x))
+print(x.__add__)
+print(help(x))
+print("\n")
+print("\n")
+print("\n")
+print("\n")
+
+class method:#dictonay class
+    def __init__(self,name,age):
+        self.name=name
+        self.age= age
+fun1=method("vaibhav",20)
+print(fun1.__dict__)
+print("\n")
+print("\n")
+print("\n")
+print("\n")
+print(help(fun1))
+# print(dir(x))
+# print(dir(x))
+# print(dir(x))
+
+
+#days 72 super keyword
+class university:
+    def __init__(self,student,course):
+        self.student=student
+        self.course=course
+
+    def detail(self,name,age,enroll):
+        # name="om"
+        # age=21
+        # enroll=12634
+        print(f"his name is {name} , and he is {age} year old and roll no is {enroll}")
+
+class student(university):
+    def __init__(self,student,course,enroll):
+     self.enroll=enroll
+     super().__init__(student,course)
+
+
+std=student("vaibhav","btech",600)
+std.detail("aman",20,15)
+print(std.student)
+print(std.enroll)
+print(std.course)
+
+#day 73 magic /dundle method(str,repr,call,len etc)
+class Name:
+    name="kalua"
+    # print(len(name))
+    def __len__(self):
+       i=0
+       for c in self.name:
+           i=i+1
+       return i
+
+    def __str__(self):
+       return f"the name of the boy is {self.name}"
+    def __repr__(self):
+       return f"the name of the man is {self.name}"
+
+    def __call__(self):
+       print("dont call me")
+
+
+a= Name()
+print(len(a))
+print(a)
+print(str(a))
+print(repr(a))
+a()
+
+
+#days 74 method overriding
+
+class department:
+    def __init__(self, name, roll):
+        self.name = name
+        self.roll = roll
+
+    def detail(self):
+        print(f"He is {self.name} and his roll no is {self.roll}")
+
+
+class std(department):
+    def __init__(self, name, roll, age, course):
+        super().__init__(name, roll)  # Call the parent class's __init__ method
+        self.age = age
+        self.course = course
+
+    def detail(self):
+        print(f"He is {self.name}, his roll no is {self.roll}, he is {self.age} years old, and he is studying {self.course}")
+
+
+dep = department("omkar", 24)
+
+# Create an instance of std and call its detail method
+student = std("Rahul", 25, 20, "Computer Science")
+dep.detail()  # Call detail without arguments
+student.detail()
+
+
+#days 75 exercise 7 solution
+
+#days 76 exercise 8 merge the pdf
+
+from pypdf import PdfMerger
+import os
+
+# List of PDF files to merge
+pdf_files = ["PDF1.pdf", "PDF2.pdf", "PDF3.pdf", "PDF4.pdf", "PDF5.pdf"]
+
+# Create a PdfMerger object
+merger = PdfMerger()
+
+for pdf in pdf_files:
+    if os.path.isfile(pdf):
+        merger.append(pdf)
+    else:
+        print(f"Error: The file '{pdf}' does not exist.")
+
+# Write the merged PDF to a file
+try:
+    merger.write("merged.pdf")
+    print("Merged PDF created successfully.")
+except Exception as e:
+    print(f"Error writing the merged PDF: {e}")
+
+# Close the PdfMerger object
+merger.close()
+
+
+#days 77 operator overloading
+
+class vector:
+    def __init__(self,i,j,k):
+        self.i=i
+        self.j=j
+        self.k=k
+
+    def __str__(self):
+        return f"{self.i}i + {self.j}j + {self.k}k"
+
+    def __add__(self,v2):
+        return vector(self.i + v2.i, self.j+v2.j,self.k+v2.k)
+
+    def __mul__(self,v2):
+        return vector(self.i * v2.i, self.j*v2.j,self.k*v2.k)
+
+v1=vector(1,2,3)
+v2=vector(5,7,9)
+v3=vector(4,5,6)
+print(v1)
+print(v2)
+print(v3)
+print(v1 + v2 + v3)
+print(v1 * v2 * v3)
+
+#day 78 single inhertance
+
+class student:
+    def __init__(self,name,rollno,gender):
+        self.name=name
+        self.rollno=rollno
+        self.gender=gender
+    def detail(self):
+        print(f"name :{self.name} \nRoll Number :{self.rollno}\nGender :{self.gender}")
+
+class department(student):
+    def __init__(self, name, rollno, gender, course):
+        super().__init__(name, rollno, gender)
+        self.course = course
+
+    def detail(self):
+        super().detail()
+        print(f"Course :{self.course}")
+
+
+obj1=student("vaibhav",600,"male")
+obj2=department("vaibhav",600,"male","cse")
+
+obj1.detail()
+# obj2.detail()
+
+
+#days 79 multiple inhertance
+
+
+class student:
+    def __init__(self, name, rollno, gender):
+        self.name = name
+        self.rollno = rollno
+        self.gender = gender
+
+    def detail(self):
+        print(f"name :{self.name} \nRoll Number :{self.rollno}\nGender :{self.gender}")
+
+
+class department:
+    def __init__(self, name, rollno, gender, course):
+        self.name = name
+        self.rollno = rollno
+        self.gender = gender
+        self.course = course
+
+    def detail(self):
+        print(f"name :{self.name} \nRoll Number :{self.rollno}\nGender :{self.gender}Course :{self.course}")
+
+
+class address(student,department):
+    def __init__(self, name, rollno, gender, course, address):
+        student.__init__(self, name, rollno, gender)
+        department.__init__(self, name, rollno, gender, course)
+        self.address = address
+
+    def __str__(self):
+        return f"name :{self.name} \nRoll Number :{self.rollno}\nGender :{self.gender}\nCourse :{self.course}\naddress :{self.address}"
+
+
+obj1 = student("vaibhav", 600, "male")
+obj2 = department("vaibhav", 600, "male", "cse")
+obj3 = address("vaibhav", 600, "male", "cse", "thane")
+
+# obj1.detail()
+# obj2.detail()
+print(obj3)
+
+
+#days 80 multi level inhertance
+
+class student:
+    def __init__(self, name, rollno, gender):
+        self.name = name
+        self.rollno = rollno
+        self.gender = gender
+
+    def detail(self):
+        print(f"name :{self.name} \nRoll Number :{self.rollno}\nGender :{self.gender}")
+
+
+class department(student):
+    def __init__(self, name, rollno, gender, course):
+        super().__init__( name, rollno, gender)
+        self.course = course
+
+    def detail(self):
+        super().detail()
+        print(f"Course :{self.course}")
+
+
+class address(department):
+    def __init__(self, name, rollno, gender, course, address):
+        super().__init__(name, rollno, gender, course)
+        self.address = address
+
+    def __str__(self):
+        super().detail()
+        return f"address :{self.address}"
+
+
+obj1 = student("vaibhav", 600, "male")
+obj2 = department("vaibhav", 600, "male", "cse")
+obj3 = address("vaibhav", 600, "male", "cse", "thane")
+
+obj1.detail()
+print("\n")
+obj2.detail()
+print("\n")
+print(obj3)
+
+
+#days 81 Hierarchical inheritance
+
+class Animalia:
+    def __init__(self, name):
+        self.name = name
+    
+    def detail_animalia(self):
+        print(f"His name is: {self.name}")
+
+class Animal(Animalia):
+    def __init__(self, species, name):
+        super().__init__(name)
+        self.species = species
+
+    def detail_animal(self):
+        super().detail_animalia()
+        print(f"The species is: {self.species}")
+
+class Dog(Animalia):
+    def __init__(self, bark,name):
+        super().__init__(name)
+        self.bark = bark
+
+    def detail(self):
+        super().detail_animalia()
+        print(f"It barks: {self.bark}")
+
+# Create objects
+obj = Animal("Labra", "Sonu")
+obj1 = Dog("Barking",  "Kalya")
+
+# Call detail methods
+obj.detail_animal()
+obj1.detail()
+
+
+
+#hybrid inheritance
+class Animalia:
+    def __init__(self, name):
+        self.name = name
+    
+    def detail_animalia(self):
+        print(f"His name is: {self.name}")
+
+class Animal(Animalia):
+    def __init__(self, species, name):
+        Animalia.__init__(self, name)  # Direct call to Animalia's init
+        self.species = species
+
+    def detail_animal(self):
+        self.detail_animalia()
+        print(f"The species is: {self.species}\n")
+
+class Dog(Animalia):
+    def __init__(self, bark, name):
+        Animalia.__init__(self, name)  # Direct call to Animalia's init
+        self.bark = bark
+
+    def detail_dog(self):
+        self.detail_animalia()
+        print(f"It barks: {self.bark}\n")
+
+class Doctor(Animal, Dog):
+    def __init__(self, species, bark, d_name, name):
+        Animalia.__init__(self, name)  # Initialize the topmost base class
+        Animal.__init__(self, species, name)
+        Dog.__init__(self, bark, name)
+        self.d_name = d_name
+
+    def detail(self):
+        print(f"This is Dr. {self.d_name}\n")
+        Animal.detail_animal(self)
+        Dog.detail_dog(self)
+
+# Create objects
+obj = Animal("Labra", "Sonu")
+obj1 = Dog("Barking", "Tisen")
+obj2 = Doctor("Labra", "Barking", "Husmukh", "Rambo")
+
+# Printing details
+obj2.detail()
+obj.detail_animal()
+obj1.detail_dog()
+
+
+#days 82 exercise 8 solution
+
+#days 83 exercise 9
+
+1.Write a program to pronounce list of names using win32 API.
+2 If you are given a list l as follows:
+3`````python
+4 l = ["Rahul", "Nishant", "Harry"]
+5 ````
+6 Your program should pronouce:
+7````
+8 Shoutout to Rahul
+9 Shoutout to Nishant
+
+
+
+import win32com.client as wincl
+
+
+speaker_number = 1
+spk = wincl.Dispatch("SAPI.SpVoice")
+vcs = spk.GetVoices()
+SVSFlag = 11
+print(vcs.Item (speaker_number) .GetAttribute ("Name")) # speaker name
+spk.Voice
+spk.SetVoice(vcs.Item(speaker_number)) # set voice (see Windows Text-to-Speech settings)
+list1=["aman","Rohan","khushi","andry"]
+for i in list1:
+ spk.Speak("shoutout to "+i)
+
+
+#days 84 time module
+
+import time
+time1=time.time()
+
+for i in range(100):
+    print(i)
+        
+time2=time.time()
+
+i=0
+while i <100:
+    print(i)
+    i=i+1 
+        
+print(time.time() - time1)
+print(time.time() - time2)   
+j=0
+while j <10:
+    time.sleep(2)
+    print(j)
+    j=j+1   
+    
+#priting current time
+t=time.localtime()
+t_format=time.strftime("%Y-%m-%d  %H:%M:%S",t)
+print(t_format)
+
+##day 85 skip commom command line
+
+##day 86 walrus opertor
+
+# foods=list()
+# while True:
+#     foods=input("what food do you like?: ")
+#     if foods=="exit":
+#         break
+    
+#using walrus
+foods=list()
+while (food:=input("enter foods:") ) !="exit":
+    foods.append(food)
+
+#day 87 shutil module
+
+import shutil
+import os
+shutil.copy("hello.txt","vaibhav.py")
+shutil.copytree("aloo","vaibhav1.py")
+shutil.move("hello.txt","aloo")
+os.remove("aloo/hello.txt")
+
+
+    
+
+
 
 
 
