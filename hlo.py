@@ -1742,6 +1742,238 @@ shutil.copytree("aloo","vaibhav1.py")
 shutil.move("hello.txt","aloo")
 os.remove("aloo/hello.txt")
 
+# day 88 exercise 9 solution
+
+
+# day 89 request module
+
+import requests
+
+url = "https://jsonplaceholder.typicode.com/posts"
+
+data= {
+    "title": 'harry',
+    "body":'bhai',
+    "userId": 12,
+}
+
+headers={
+    'Content-type' : 'application/json;charset=UTF-8',
+}
+
+rsponse= requests.post(url,headers=headers , json=data)
+
+# day 90 excise 10 with solution news api
+
+import requests
+import json
+
+query=input("Enter what news you want:")
+url=f"https://newsapi.org/v2/everything?q={query}&from=2024-06-16&sortBy=publishedAt&apiKey=958bb3b2b30a4a4ba38cfadb87bb7e8f"
+r= requests.get(url)
+news=json.loads(r.text)
+
+for article in news["articles"]:
+    print(f"TITLE :{article["title"]}")
+    print(f"DESC :{article["description"]}")
+    print("----------------------------------------------------------")
+
+
+# day 91 python generator
+
+def my_generator():
+    for i in range(500):
+        yield i
+
+gen= my_generator()
+print(next(gen))
+print(next(gen))
+print(next(gen))
+print(next(gen))
+print(next(gen))
+print(next(gen))
+print(next(gen))
+print(next(gen))
+print(next(gen))
+print(next(gen))
+print(next(gen))
+print(next(gen))
+print(next(gen))
+print(next(gen))
+print(next(gen))
+print(next(gen))
+print(next(gen))
+print(next(gen))
+print(next(gen))
+print("------End--------")
+
+
+# day 92   function caching
+from  functools import lru_cache
+import time
+
+@lru_cache(maxsize=None)
+
+def fx(n):
+    time.sleep(2)
+    return n*5
+
+
+print(fx(2))
+print("done for 2")
+print(fx(5))
+print("done for 5")
+print(fx(7))
+print("done for 7")
+print(fx(3))
+print("done for 3")
+print(fx(8))
+print("done for 8")
+
+
+print(fx(2))
+print("done for 2")
+print(fx(5))
+print("done for 5")
+print(fx(7))
+print("done for 7")
+print(fx(3))
+print("done for 3")
+print(fx(8))
+print("done for 8")
+
+print(fx(100))
+
+# day 93 exercise 10 solution
+
+# day 94 exercise 11 drink water reminder
+import time
+import win32com.client as wincl
+
+
+speaker_number = 1
+spk = wincl.Dispatch("SAPI.SpVoice")
+vcs = spk.GetVoices()
+SVSFlag = 11
+print(vcs.Item (speaker_number) .GetAttribute ("Name")) # speaker name
+spk.Voice
+spk.SetVoice(vcs.Item(speaker_number)) # set voice (see Windows Text-to-Speech settings)
+
+
+def drink_water_reminder(interval_in_minutes):
+
+
+    interval_seconds = interval_in_minutes * 60
+    while True:
+        time.sleep(interval_seconds)
+        spk.Speak("It's time to drink water!")
+        print("It's time to drink water!")
+
+if __name__ == "__main__":
+    interval_minutes = 1  # Change this to set your reminder interval in minutes
+    drink_water_reminder(interval_minutes)
+
+
+# day 95 regalar expression
+
+import re
+
+pattern = r"[A-Z]cience"
+text = "Cora Agnes Benneson (1851–1919) was an American attorney, lecturer, and writer. She graduated from the University of Michigan, earning a Bachelor of Arts in 1878, a Bachelor of Laws in 1880, and a Master of Arts in 1883, and was licensed to practice law in Illinois and Michigan. From 1883 to 1885, she traveled the world to learn about legal cultures and how they affected women. When she returned to the United States, she undertook a nationwide lecture tour to speak about her travels and observations. In 1886 Benneson briefly worked as an editor of West Publishing's law reports before taking up a history fellowship at Bryn Mawr College under then-professor Woodrow Wilson. In 1888 she moved to Boston, where she continued to write and lecture. She was licensed in Massachusetts in 1894 and opened a law practice. She was made a fellow of the Dcience Association for the Advancement of Science in 1899 and elected secretary  Acience of its Social and Economic Science Section in 1900."
+
+matches = re.finditer(pattern, text)
+for match in matches:
+    # print(match)
+  print(text[match.span()[0]:match.span()[1]])
+
+
+#day 96  asynclo in python
+
+import asyncio
+import time
+
+async def function1():
+    await asyncio.sleep(2)
+    print("fun1")
+
+async def function2():
+    await asyncio.sleep(2)
+    print("fun2")
+
+async def function3():
+    await asyncio.sleep(2)
+    print("fun3")
+
+async def main():
+    # Gather all the functions to run concurrently
+    await asyncio.gather(
+        function1(),
+        function2(),
+        function3()
+    )
+
+# Run the main function
+if __name__ == "__main__":
+    asyncio.run(main())
+
+#day 97 multithreading in python
+
+import threading
+import time
+
+def func(second):
+    
+    print(f"sleeping for {second} second")
+    time.sleep(second)
+
+#normal zindagi   
+time1=time.perf_counter()
+func(3)
+func(2)
+func(1)
+time2=time.perf_counter()
+print(time2-time1)
+
+
+# #mentos zindagi
+# t1=threading.Thread(target=func,args=[3])
+# t2=threading.Thread(target=func,args=[2])
+# t3=threading.Thread(target=func,args=[1])
+
+# t1.start()
+# t2.start()
+# t3.start()
+
+#day 98 multiprocessing
+
+import multiprocessing
+import requests
+
+def downloadfiles(url, name):
+    print(f"Downloading file {name}....")
+    response = requests.get(url)
+    with open(f"file{name}.jpg", "wb") as f:
+        f.write(response.content)
+    print(f"Downloaded file {name}!")
+
+if __name__ == '__main__':
+    url = "https://picsum.photos/200/300"
+    processes = []
+
+    for i in range(5):
+        p = multiprocessing.Process(target=downloadfiles, args=(url, i))
+        p.start()
+        processes.append(p)
+
+    for p in processes:
+        p.join()
+
+    
+#day 99 exercise 11 solution
+
+
+#day 100 guide for what learn next
+
 
     
 
