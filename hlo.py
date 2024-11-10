@@ -1,7 +1,7 @@
 a=input("enter your number :")       
 print("your name is :",a)        
 
-x= int (input("enter first number :"))           
+x= int (input("enter first number :"))            
 y=int (input("enter second number :"))             
   
         
