@@ -6,7 +6,8 @@ y=int (input("enter second number :"))
 
   
         
-print("addition :" ,x + y)             
+print("addition
+:" ,x + y)             
 print("subtraction :",x - y)            
 print("divide :" ,x / y)         
 print("multiplication :",x * y)         
