@@ -1,7 +1,7 @@
 # Day 1: User Input and Basic Arithmetic Operations                
 a = input("Enter your name: ")  # Taking user input for name              
 print("Your name is:", a)  # Printing the entered name         
-
+ 
 x = int(input("Enter first number: "))  # Taking first number as input
 y = int(input("Enter second number: "))  # Taking second number as input  
  
