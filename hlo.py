@@ -82,7 +82,7 @@ elif a > 16 and a < 20:
 elif a >= 20 and a <= 24:
     print("GOOD NIGHT JI!")
 else:
-    print("Andhera kayam rahe!")
+    print("Andhera kayam rahe!") 
 
 # Using the time module to get the current time in different formats.
 import time
