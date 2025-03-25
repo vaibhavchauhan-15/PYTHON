@@ -5,7 +5,7 @@ print("Your name is:", a)  # Printing the entered name
 x = int(input("Enter first number: "))  # Taking first number as input
 y = int(input("Enter second number: "))  # Taking second number as input  
  
-print("Addition:", x + y)  # Performing addition
+print("Addition:", x + y)  # Performing addition 
 print("Subtraction:", x - y)  # Performing subtraction
 print("Division:", x / y)  # Performing division
 print("Multiplication:", x * y)  # Performing multiplication
