@@ -6,7 +6,7 @@ x = int(input("Enter first number: "))  # Taking first number as input
 y = int(input("Enter second number: "))  # Taking second number as input  
  
 print("Addition:", x + y)  # Performing addition 
-print("Subtraction:", x - y)  # Performing subtraction
+print("Subtraction:", x - y)  # Performing subtraction 
 print("Division:", x / y)  # Performing division
 print("Multiplication:", x * y)  # Performing multiplication
 print("Remainder:", x % y)  # Calculating remainder
